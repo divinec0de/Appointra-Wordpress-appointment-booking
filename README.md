@@ -10,8 +10,6 @@ A lightweight WordPress plugin for appointment scheduling with built-in Stripe p
 
 Every booking plugin I tried was either way too heavy for what I needed, locked basic features behind a paywall, or didn't support per-service pricing out of the box. I needed something simple: let clients pick a service (each with its own price), choose a date/time, pay via Stripe, and get a confirmation email. That's it.
 
-So I built it myself.
-
 ---
 
 ## Features
