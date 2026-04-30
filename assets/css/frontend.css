@@ -1,0 +1,105 @@
+/* CHM Appointments — Frontend Booking Form */
+.chm-booking{max-width:760px;margin:0 auto;font-family:'Barlow',Helvetica,Arial,sans-serif}
+
+/* Steps */
+.chm-step{display:none;animation:chmFadeIn .3s ease}
+.chm-step--active{display:block}
+@keyframes chmFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.chm-step-header{display:flex;align-items:center;gap:16px;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid #00C8C0}
+.chm-step-num{width:42px;height:42px;background:#06101E;color:#00C8C0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;flex-shrink:0}
+.chm-step-header h3{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#081524}
+.chm-step-header p{margin:2px 0 0;font-size:.88rem;color:#5A7088}
+
+/* Calendar */
+.chm-datetime-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.chm-calendar-wrap{background:#F5F8FC;border:1px solid #D8E2EE;padding:20px}
+.chm-cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.chm-cal-nav button{background:none;border:1px solid #D8E2EE;width:34px;height:34px;cursor:pointer;font-size:16px;color:#081524;transition:all .2s}
+.chm-cal-nav button:hover{background:#06101E;color:#00C8C0;border-color:#06101E}
+.chm-cal-month-label{font-family:'Barlow Condensed',sans-serif;font-size:.88rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#081524}
+
+.chm-cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:8px}
+.chm-cal-weekdays span{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#5A7088;padding:4px 0}
+
+.chm-cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.chm-cal-day{text-align:center;padding:10px 4px;font-size:.88rem;font-weight:500;color:#081524;cursor:pointer;transition:all .15s;border:1px solid transparent}
+.chm-cal-day:hover:not(.chm-cal-day--disabled):not(.chm-cal-day--empty){background:#06101E;color:#FFFFFF}
+.chm-cal-day--today{font-weight:700;color:#00C8C0;border-color:#00C8C0}
+.chm-cal-day--selected{background:#00C8C0 !important;color:#06101E !important;font-weight:700}
+.chm-cal-day--disabled{color:#D8E2EE;cursor:default;pointer-events:none}
+.chm-cal-day--empty{pointer-events:none}
+
+/* Slots */
+.chm-slots-wrap{background:#F5F8FC;border:1px solid #D8E2EE;padding:20px}
+.chm-slots-placeholder,.chm-slots-loading,.chm-slots-empty{font-size:.88rem;color:#5A7088;padding:40px 16px;text-align:center;line-height:1.6}
+.chm-slots-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-height:340px;overflow-y:auto;padding-right:4px}
+.chm-slot{padding:10px 12px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.06em;color:#081524;background:#FFFFFF;border:1.5px solid #D8E2EE;cursor:pointer;transition:all .15s}
+.chm-slot:hover{border-color:#00C8C0;color:#00C8C0}
+.chm-slot--selected{background:#00C8C0 !important;color:#06101E !important;border-color:#00C8C0 !important;font-weight:700}
+.chm-slot--taken{opacity:.35;cursor:default;pointer-events:none;text-decoration:line-through}
+
+/* Form fields */
+.chm-form-fields{display:flex;flex-direction:column;gap:4px}
+.chm-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chm-field{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.chm-field label{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5A7088}
+.chm-field label span{color:#F07830}
+.chm-field input,.chm-field select,.chm-field textarea{background:#FFFFFF;border:1.5px solid #D8E2EE;color:#081524;font-family:'Barlow',sans-serif;font-size:.95rem;padding:.875rem 1rem;outline:none;transition:all .2s;-webkit-appearance:none;appearance:none;border-radius:0}
+.chm-field input:focus,.chm-field select:focus,.chm-field textarea:focus{border-color:#00C8C0;box-shadow:0 0 0 3px rgba(0,200,192,.14)}
+.chm-field textarea{resize:vertical;min-height:80px}
+.chm-field input::placeholder,.chm-field textarea::placeholder{color:#98a7b5}
+
+/* Price preview */
+.chm-price-preview{display:flex;align-items:center;justify-content:space-between;background:#06101E;padding:14px 20px;margin-bottom:16px}
+.chm-price-preview span{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(238,243,255,.5)}
+.chm-price-preview strong{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#00C8C0}
+
+/* Summary */
+.chm-summary-card{background:#F5F8FC;border:1px solid #D8E2EE;padding:0;margin-bottom:24px}
+.chm-summary-row{display:flex;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #D8E2EE;font-size:.92rem}
+.chm-summary-row:last-child{border-bottom:none}
+.chm-summary-row span{color:#5A7088}
+.chm-summary-row strong{color:#081524;font-weight:600}
+.chm-summary-total{background:#06101E}
+.chm-summary-total span{color:rgba(238,243,255,.6)}
+.chm-summary-total strong{color:#00C8C0;font-size:1.15rem}
+
+/* Stripe card element */
+.chm-stripe-wrap{margin-bottom:24px}
+.chm-stripe-wrap label{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5A7088;display:block;margin-bottom:8px}
+#chm-card-element{background:#FFFFFF;border:1.5px solid #D8E2EE;padding:14px 16px;transition:border-color .2s}
+#chm-card-element.StripeElement--focus{border-color:#00C8C0;box-shadow:0 0 0 3px rgba(0,200,192,.14)}
+#chm-card-element.StripeElement--invalid{border-color:#F07830}
+.chm-error{color:#F07830;font-size:.85rem;margin-top:8px;min-height:20px}
+
+/* Buttons */
+.chm-step-footer{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:20px;border-top:1px solid #D8E2EE}
+.chm-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;border:none;cursor:pointer;transition:all .22s;text-decoration:none;color:#06101E;background:#00C8C0}
+.chm-btn:hover{background:#00E4DB;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,200,192,.35)}
+.chm-btn:disabled{opacity:.4;cursor:not-allowed;transform:none !important;box-shadow:none !important}
+.chm-btn--back{background:transparent;color:#081524;border:2px solid #D8E2EE;padding:12px 24px}
+.chm-btn--back:hover{border-color:#081524;background:#081524;color:#fff}
+.chm-btn--pay{background:#00C8C0;min-width:200px;justify-content:center}
+.chm-btn-spinner{width:18px;height:18px;border:2px solid rgba(6,16,30,.2);border-top-color:#06101E;border-radius:50%;animation:chmSpin .6s linear infinite}
+@keyframes chmSpin{to{transform:rotate(360deg)}}
+
+/* Confirmation */
+.chm-confirmation{text-align:center;padding:48px 24px}
+.chm-confirm-icon{width:72px;height:72px;background:#00C8C0;color:#06101E;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;margin:0 auto 24px}
+.chm-confirmation h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:2rem;font-weight:700;color:#081524;margin:0 0 12px}
+.chm-confirmation p{font-size:1rem;color:#5A7088;line-height:1.7;max-width:440px;margin:0 auto 24px}
+.chm-confirm-details{background:#F5F8FC;border:1px solid #D8E2EE;padding:20px;text-align:left;margin:0 auto 24px;max-width:380px}
+.chm-confirm-details .chm-cd-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #D8E2EE;font-size:.9rem}
+.chm-confirm-details .chm-cd-row:last-child{border-bottom:none}
+.chm-confirm-details .chm-cd-row span{color:#5A7088}
+.chm-confirm-details .chm-cd-row strong{color:#081524}
+
+/* Responsive */
+@media(max-width:640px){
+    .chm-datetime-grid{grid-template-columns:1fr}
+    .chm-form-row{grid-template-columns:1fr}
+    .chm-slots-list{grid-template-columns:1fr 1fr}
+    .chm-step-footer{flex-direction:column;gap:12px}
+    .chm-step-footer .chm-btn{width:100%;justify-content:center}
+}
