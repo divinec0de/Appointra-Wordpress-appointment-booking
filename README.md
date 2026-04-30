@@ -253,4 +253,4 @@ GPLv2 or later. See [LICENSE](LICENSE) for details.
 
 ---
 
-**Built by [Nadir](https://github.com/divinec0de)** — because booking plugins shouldn't need 47 add-ons to do the basics.
+**Built by [Divine C0de](https://github.com/divinec0de)** — because booking plugins shouldn't need 47 add-ons to do the basics.
